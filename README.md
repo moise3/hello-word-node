@@ -8,7 +8,7 @@ Utile pour tester un développement
 
 ```bash
     git clone git@github.com/moise3/hello-word-node.git
-    cd hello-word-node
+    cd src/hello-word-node
     npm install
     npm start
 ```
