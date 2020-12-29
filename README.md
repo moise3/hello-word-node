@@ -12,3 +12,9 @@ Utile pour tester un développement
     npm install
     npm start
 ```
+
+### Build des images
+```bash
+    docker build -t helloworld:vdocker -f build/Dockerfile .
+    pack build helloworld:vpack --path src/. --builder cloudfoundry/cnb:bionic
+```
