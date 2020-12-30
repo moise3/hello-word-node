@@ -67,7 +67,7 @@ object Build : BuildType({
                 source = file {
                     path = "Dockerfile"
                 }
-                namesAndTags = "hello-world:vdocker-saas"
+                namesAndTags = "mkameni/hello-world:vdocker-saas"
                 commandArgs = "--pull"
             }
         }
