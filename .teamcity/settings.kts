@@ -64,7 +64,7 @@ object Build : BuildType({
         dockerCommand {
             commandType = build {
                 source = file {
-                    path = "build/Dockerfile"
+                    path = "Dockerfile"
                 }
             }
         }
