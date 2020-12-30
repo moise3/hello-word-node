@@ -5,6 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.dockerRegistry
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -31,6 +32,8 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
+
+    vcsRoot(HttpsGithubComMoise3helloWordNodeRefsHeadsVsaasPack)
 
     buildType(Build)
 
@@ -96,5 +99,15 @@ object Build : BuildType({
                 dockerRegistryId = "PROJECT_EXT_2"
             }
         }
+    }
+})
+
+object HttpsGithubComMoise3helloWordNodeRefsHeadsVsaasPack : GitVcsRoot({
+    name = "https://github.com/moise3/hello-word-node#refs/heads/vsaas-pack"
+    url = "https://github.com/moise3/hello-word-node"
+    branch = "refs/heads/vsaas-pack"
+    authMethod = password {
+        userName = "moise3"
+        password = "credentialsJSON:85791559-1e11-4740-a672-a2a66ab83cbb"
     }
 })
