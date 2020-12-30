@@ -50,16 +50,5 @@ changeBuildType(RelativeId("Build")) {
                 param("dockerImage.platform", "linux")
             }
         }
-        insert(4) {
-            dockerCommand {
-                name = "Build Image (1)"
-                commandType = build {
-                    source = file {
-                        path = "build/Dockerfile"
-                    }
-                }
-                param("dockerImage.platform", "linux")
-            }
-        }
     }
 }
