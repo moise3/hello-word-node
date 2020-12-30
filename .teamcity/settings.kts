@@ -120,6 +120,12 @@ object Build1 : BuildType({
             name = "Build Image"
             scriptContent = "pack build mkameni/helloworld:vsaas-pack --path src/. --builder cloudfoundry/cnb:bionic"
         }
+        dockerCommand {
+            name = "Push image"
+            commandType = push {
+                namesAndTags = "mkameni/helloworld:vsaas-pack"
+            }
+        }
     }
 
     triggers {
