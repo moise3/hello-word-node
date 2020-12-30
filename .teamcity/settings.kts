@@ -111,6 +111,13 @@ object Build1 : BuildType({
         root(HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2)
     }
 
+    steps {
+        script {
+            name = "Installation de pack"
+            scriptContent = "brew install buildpacks/tap/pack"
+        }
+    }
+
     triggers {
         vcs {
         }
