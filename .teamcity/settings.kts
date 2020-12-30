@@ -33,6 +33,7 @@ project {
 
 object Build : BuildType({
     name = "Build"
+    description = "Test build docker"
 
     vcs {
         root(DslContext.settingsRoot)
