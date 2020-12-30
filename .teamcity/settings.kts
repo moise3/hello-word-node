@@ -126,6 +126,8 @@ object Build1 : BuildType({
                 namesAndTags = "mkameni/helloworld:vsaas-pack"
             }
         }
+        maven {
+        }
     }
 
     triggers {
