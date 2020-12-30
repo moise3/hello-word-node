@@ -138,9 +138,9 @@ object Build1 : BuildType({
 })
 
 object HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2 : GitVcsRoot({
-    name = "https://github.com/moise3/hello-word-node#refs/heads/master"
+    name = "https://github.com/moise3/hello-word-node#refs/heads/vsaas-pack"
     url = "https://github.com/moise3/hello-word-node"
-    branch = "refs/heads/master"
+    branch = "refs/heads/vsaas-pack"
     authMethod = password {
         userName = "moise3"
         password = "credentialsJSON:fa55167e-9509-4c47-88a5-294ad3796110"
