@@ -105,7 +105,7 @@ object Build : BuildType({
 })
 
 object Build1 : BuildType({
-    name = "Build (1)"
+    name = "Build Pack"
 
     vcs {
         root(HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2)
