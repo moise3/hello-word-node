@@ -116,6 +116,10 @@ object Build1 : BuildType({
             name = "Installation de pack"
             scriptContent = "brew install buildpacks/tap/pack"
         }
+        script {
+            name = "Build Image"
+            scriptContent = "pack build mkameni/helloworld:vsaas-pack --path src/. --builder cloudfoundry/cnb:bionic"
+        }
     }
 
     triggers {
