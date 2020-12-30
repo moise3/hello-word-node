@@ -118,10 +118,11 @@ object Build1 : BuildType({
         script {
             name = "Build Image"
             scriptContent = """
-                sudo docker run \
-                  -v /var/run/docker.sock:/var/run/docker.sock \
-                  -v ${'$'}PWD/src:/workspace -w /workspace \
-                  buildpacksio/pack build mkameni/helloworld:vsaas-pack --builder cloudfoundry/cnb:bionic
+                #sudo docker run \
+                #  -v /var/run/docker.sock:/var/run/docker.sock \
+                #  -v ${'$'}PWD/src:/workspace -w /workspace \
+                #  buildpacksio/pack build mkameni/helloworld:vsaas-pack --builder cloudfoundry/cnb:bionic
+                pack build mkameni/helloworld:vsaas-pack --path src/. --builder cloudfoundry/cnb:bionic
             """.trimIndent()
         }
         dockerCommand {
