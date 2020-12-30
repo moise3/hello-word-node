@@ -47,7 +47,7 @@ project {
 
 object Build : BuildType({
     name = "Build"
-    description = "Ceci est un test"
+    description = "Ceci est un test avec buildpacks"
 
     vcs {
         root(DslContext.settingsRoot)
