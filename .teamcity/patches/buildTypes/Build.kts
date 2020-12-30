@@ -45,7 +45,6 @@ changeBuildType(RelativeId("Build")) {
                     source = file {
                         path = "build/Dockerfile"
                     }
-                    commandArgs = "--pull"
                 }
                 param("dockerImage.platform", "linux")
             }
