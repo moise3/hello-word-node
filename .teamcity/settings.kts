@@ -54,6 +54,13 @@ object Build : BuildType({
     }
 
     steps {
+        script {
+            name = "debug"
+            scriptContent = """
+                ls
+                pwd
+            """.trimIndent()
+        }
         dockerCommand {
             commandType = build {
                 source = file {
@@ -71,13 +78,6 @@ object Build : BuildType({
             goals = "clean test"
             pomLocation = ".teamcity/pom.xml"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-        script {
-            name = "debug"
-            scriptContent = """
-                ls
-                pwd
-            """.trimIndent()
         }
     }
 
