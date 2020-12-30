@@ -56,6 +56,9 @@ changeBuildType(RelativeId("Build")) {
         add {
             dockerSupport {
                 cleanupPushedImages = true
+                loginToRegistry = on {
+                    dockerRegistryId = "PROJECT_EXT_3"
+                }
             }
         }
     }
