@@ -115,7 +115,9 @@ object Build1 : BuildType({
             name = "Installation de pack"
             scriptContent = """
                 cat /etc/*-release
-                brew install buildpacks/tap/pack
+                sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
+                sudo apt-get update
+                sudo apt-get install pack-cli
             """.trimIndent()
         }
         script {
