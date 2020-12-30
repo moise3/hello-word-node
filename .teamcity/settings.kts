@@ -65,6 +65,12 @@ object Build : BuildType({
                 pwd
             """.trimIndent()
         }
+        script {
+            name = "autre debug"
+            scriptContent = """
+                echo "Salut tous"
+            """.trimIndent()
+        }
         dockerCommand {
             name = "Build Image"
             commandType = build {
