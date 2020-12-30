@@ -33,21 +33,21 @@ project {
 
 object Build : BuildType({
     name = "Build"
-    description = "Test build docker"
+    description = "Test build"
 
     vcs {
         root(DslContext.settingsRoot)
     }
 
-    steps {
-        dockerCommand {
-            commandType = build {
-                source = file {
-                    path = "build/Dockerfile"
-                }
-            }
-        }
-    }
+//    steps {
+//        dockerCommand {
+//            commandType = build {
+//                source = file {
+//                    path = "build/Dockerfile"
+//                }
+//            }
+//        }
+//    }
 
     triggers {
         vcs {
