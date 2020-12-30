@@ -51,7 +51,7 @@ project {
 
 object Build : BuildType({
     name = "Build"
-    description = "Ceci est un test avec Buildpacks et gestion de multi-branches"
+    description = "Ceci est un test"
 
     vcs {
         root(HttpsGithubComMoise3helloWordNodeRefsHeadsVsaas)
@@ -104,7 +104,7 @@ object Build : BuildType({
 })
 
 object Build1 : BuildType({
-    name = "Build Pack"
+    name = "Build Pack avec Buildpacks et gestion de multi-branches"
 
     vcs {
         root(DslContext.settingsRoot)
