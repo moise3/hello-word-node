@@ -1,4 +1,7 @@
-FROM node:6.14.2
+FROM node:12
+WORKDIR /usr/src/app
+COPY src/package*.json ./
+RUN npm install
+COPY src/ .
 EXPOSE 8080
-COPY hello-word-node/src/index.js .
-CMD node index.js
+CMD ["node", "index.js"]
