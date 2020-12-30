@@ -62,10 +62,13 @@ object Build : BuildType({
             """.trimIndent()
         }
         dockerCommand {
+            name = "Build Image"
             commandType = build {
                 source = file {
                     path = "Dockerfile"
                 }
+                namesAndTags = "hello-world:vdocker-saas"
+                commandArgs = "--pull"
             }
         }
         dockerCommand {
