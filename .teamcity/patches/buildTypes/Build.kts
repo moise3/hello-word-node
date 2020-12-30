@@ -50,6 +50,14 @@ changeBuildType(RelativeId("Build")) {
                 param("dockerImage.platform", "linux")
             }
         }
+        insert(4) {
+            dockerCommand {
+                name = "Push image"
+                commandType = push {
+                    namesAndTags = "hello-world:vdocker"
+                }
+            }
+        }
     }
 
     features {
