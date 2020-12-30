@@ -34,7 +34,6 @@ version = "2020.2"
 project {
 
     vcsRoot(HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2)
-    vcsRoot(HttpsGithubComMoise3helloWordNodeRefsHeadsVsaasPack)
 
     buildType(Build)
     buildType(Build1)
@@ -145,15 +144,5 @@ object HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2 : GitVcsRoot({
     authMethod = password {
         userName = "moise3"
         password = "credentialsJSON:fa55167e-9509-4c47-88a5-294ad3796110"
-    }
-})
-
-object HttpsGithubComMoise3helloWordNodeRefsHeadsVsaasPack : GitVcsRoot({
-    name = "https://github.com/moise3/hello-word-node#refs/heads/vsaas-pack"
-    url = "https://github.com/moise3/hello-word-node"
-    branch = "refs/heads/vsaas-pack"
-    authMethod = password {
-        userName = "moise3"
-        password = "credentialsJSON:85791559-1e11-4740-a672-a2a66ab83cbb"
     }
 })
