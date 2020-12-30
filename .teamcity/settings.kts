@@ -31,6 +31,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 
 version = "2020.2"
 
+
 project {
 
     vcsRoot(HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2)
@@ -50,7 +51,7 @@ project {
 }
 
 object Build : BuildType({
-    name = "Build"
+    name = "Build Test2"
     description = "Ceci est un test"
 
     vcs {
@@ -63,12 +64,6 @@ object Build : BuildType({
             scriptContent = """
                 ls
                 pwd
-            """.trimIndent()
-        }
-        script {
-            name = "autre debug"
-            scriptContent = """
-                echo "Salut tous"
             """.trimIndent()
         }
         dockerCommand {
