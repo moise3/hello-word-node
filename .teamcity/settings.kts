@@ -128,6 +128,10 @@ object Build1 : BuildType({
         }
         maven {
         }
+        maven {
+            goals = "clean test"
+            pomLocation = ".teamcity/pom.xml"
+        }
     }
 
     triggers {
