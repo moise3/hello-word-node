@@ -5,6 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.dockerRegistry
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -32,7 +33,10 @@ version = "2020.2"
 
 project {
 
+    vcsRoot(HttpsGithubComMoise3helloWordNodeRefsHeadsVsaas)
+
     buildType(Build)
+    buildType(Build1)
 
     features {
         dockerRegistry {
@@ -47,10 +51,10 @@ project {
 
 object Build : BuildType({
     name = "Build"
-    description = "Ceci est un test avec buildpacks"
+    description = "Ceci est un test"
 
     vcs {
-        root(DslContext.settingsRoot)
+        root(HttpsGithubComMoise3helloWordNodeRefsHeadsVsaas)
     }
 
     steps {
@@ -96,5 +100,49 @@ object Build : BuildType({
                 dockerRegistryId = "PROJECT_EXT_2"
             }
         }
+    }
+})
+
+object Build1 : BuildType({
+    name = "Build Pack"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            name = "Installation de pack"
+            scriptContent = "brew install buildpacks/tap/pack"
+        }
+        script {
+            name = "Build Image"
+            scriptContent = "pack build mkameni/helloworld:vsaas-pack --path src/. --builder cloudfoundry/cnb:bionic"
+        }
+        dockerCommand {
+            name = "Push image"
+            commandType = push {
+                namesAndTags = "mkameni/helloworld:vsaas-pack"
+            }
+        }
+        maven {
+            goals = "clean test"
+            pomLocation = ".teamcity/pom.xml"
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
+object HttpsGithubComMoise3helloWordNodeRefsHeadsVsaas : GitVcsRoot({
+    name = "https://github.com/moise3/hello-word-node#refs/heads/vsaas"
+    url = "https://github.com/moise3/hello-word-node"
+    branch = "refs/heads/vsaas"
+    authMethod = password {
+        userName = "moise3"
+        password = "credentialsJSON:fa55167e-9509-4c47-88a5-294ad3796110"
     }
 })
