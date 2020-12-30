@@ -120,14 +120,11 @@ object Build1 : BuildType({
                   buildpacksio/pack build mkameni/helloworld:vsaas-pack --builder cloudfoundry/cnb:bionic
             """.trimIndent()
         }
-        script {
-            name = "Build Image (1)"
-            scriptContent = """
-                docker run \
-                  -v /var/run/docker.sock:/var/run/docker.sock \
-                  -v ${'$'}PWD/src:/workspace -w /workspace \
-                  buildpacksio/pack build mkameni/helloworld:vsaas-pack --builder cloudfoundry/cnb:bionic
-            """.trimIndent()
+        dockerCommand {
+            name = "Push image"
+            commandType = push {
+                namesAndTags = "mkameni/helloworld:vsaas-pack"
+            }
         }
         maven {
             goals = "clean test"
