@@ -112,15 +112,6 @@ object Build1 : BuildType({
 
     steps {
         script {
-            name = "Installation de pack"
-            scriptContent = """
-                cat /etc/*-release
-                sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
-                sudo apt-get update
-                sudo apt-get install pack-cli
-            """.trimIndent()
-        }
-        script {
             name = "Build Image"
             scriptContent = "pack build mkameni/helloworld:vsaas-pack --path src/. --builder cloudfoundry/cnb:bionic"
         }
