@@ -33,9 +33,11 @@ version = "2020.2"
 
 project {
 
+    vcsRoot(HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2)
     vcsRoot(HttpsGithubComMoise3helloWordNodeRefsHeadsVsaasPack)
 
     buildType(Build)
+    buildType(Build1)
 
     features {
         dockerRegistry {
@@ -99,6 +101,29 @@ object Build : BuildType({
                 dockerRegistryId = "PROJECT_EXT_2"
             }
         }
+    }
+})
+
+object Build1 : BuildType({
+    name = "Build (1)"
+
+    vcs {
+        root(HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
+object HttpsGithubComMoise3helloWordNodeRefsHeadsMaster_2 : GitVcsRoot({
+    name = "https://github.com/moise3/hello-word-node#refs/heads/master"
+    url = "https://github.com/moise3/hello-word-node"
+    branch = "refs/heads/master"
+    authMethod = password {
+        userName = "moise3"
+        password = "credentialsJSON:fa55167e-9509-4c47-88a5-294ad3796110"
     }
 })
 
