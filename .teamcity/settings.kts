@@ -113,7 +113,7 @@ object Build1 : BuildType({
     steps {
         script {
             name = "Installation de pack"
-            scriptContent = """(curl -sSL "https://github.com/buildpacks/pack/releases/download/v0.15.1/pack-v0.15.1-linux.tgz" | sudo tar -C /usr/local/bin/ --no-same-owner -xzv pack)"""
+            scriptContent = """(curl -sSL "https://github.com/buildpacks/pack/releases/download/v0.15.1/pack-v0.15.1-linux.tgz" | tar -C . --no-same-owner -xzv pack)"""
         }
         script {
             name = "Build Image"
