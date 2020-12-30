@@ -113,7 +113,10 @@ object Build1 : BuildType({
     steps {
         script {
             name = "Installation de pack"
-            scriptContent = "brew install buildpacks/tap/pack"
+            scriptContent = """
+                cat /etc/*-release
+                brew install buildpacks/tap/pack
+            """.trimIndent()
         }
         script {
             name = "Build Image"
