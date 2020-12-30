@@ -51,7 +51,7 @@ project {
 
 object Build : BuildType({
     name = "Build"
-    description = "Ceci est un test"
+    description = "Ceci est un test avec Buildpacks et gestion de multi-branches"
 
     vcs {
         root(HttpsGithubComMoise3helloWordNodeRefsHeadsVsaas)
