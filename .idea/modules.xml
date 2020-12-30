@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.teamcity/HelloWordNode_dsl.iml" filepath="$PROJECT_DIR$/.teamcity/HelloWordNode_dsl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/hello-word-node.iml" filepath="$PROJECT_DIR$/.idea/hello-word-node.iml" />
-    </modules>
-  </component>
-</project>
