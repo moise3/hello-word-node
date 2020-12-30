@@ -122,7 +122,7 @@ object Build1 : BuildType({
         dockerCommand {
             name = "Push image"
             commandType = push {
-                namesAndTags = "mkameni/helloworld:vsaas-pack"
+                namesAndTags = "mkameni/hello-world:vsaas-pack"
             }
         }
         maven {
