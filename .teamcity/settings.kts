@@ -117,12 +117,12 @@ object Build1 : BuildType({
         }
         script {
             name = "Build Image"
-            scriptContent = "./pack build mkameni/hello-world:vsaas-pack --path src/. --builder cloudfoundry/cnb:bionic"
+            scriptContent = "./pack build mkameni/hello-world:vsaas-pack1 --path src/. --builder cloudfoundry/cnb:bionic"
         }
         dockerCommand {
             name = "Push image"
             commandType = push {
-                namesAndTags = "mkameni/hello-world:vsaas-pack"
+                namesAndTags = "mkameni/hello-world:vsaas-pack1"
             }
         }
         maven {
