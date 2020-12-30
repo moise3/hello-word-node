@@ -74,7 +74,7 @@ object Build : BuildType({
         dockerCommand {
             name = "Push image"
             commandType = push {
-                namesAndTags = "hello-world:vdocker-saas"
+                namesAndTags = "mkameni/hello-world:vdocker-saas"
             }
         }
         maven {
