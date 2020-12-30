@@ -113,7 +113,12 @@ object Build1 : BuildType({
     steps {
         script {
             name = "Build Image"
-            scriptContent = "pack build mkameni/helloworld:vsaas-pack --path src/. --builder cloudfoundry/cnb:bionic"
+            scriptContent = """
+                docker run \
+                  -v /var/run/docker.sock:/var/run/docker.sock \
+                  -v ${'$'}PWD/src:/workspace -w /workspace \
+                  buildpacksio/pack build mkameni/helloworld:vsaas-pack --builder cloudfoundry/cnb:bionic
+            """.trimIndent()
         }
         script {
             name = "Build Image (1)"
