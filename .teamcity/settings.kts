@@ -112,6 +112,10 @@ object Build1 : BuildType({
 
     steps {
         script {
+            name = "Installation de pack"
+            scriptContent = """(curl -sSL "https://github.com/buildpacks/pack/releases/download/v0.15.1/pack-v0.15.1-linux.tgz" | sudo tar -C /usr/local/bin/ --no-same-owner -xzv pack)"""
+        }
+        script {
             name = "Build Image"
             scriptContent = """
                 sudo docker run \
@@ -129,10 +133,6 @@ object Build1 : BuildType({
         maven {
             goals = "clean test"
             pomLocation = ".teamcity/pom.xml"
-        }
-        script {
-            name = "Installation de pack"
-            scriptContent = """(curl -sSL "https://github.com/buildpacks/pack/releases/download/v0.15.1/pack-v0.15.1-linux.tgz" | sudo tar -C /usr/local/bin/ --no-same-owner -xzv pack)"""
         }
     }
 
