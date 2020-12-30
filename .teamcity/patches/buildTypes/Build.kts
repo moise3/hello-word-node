@@ -47,6 +47,7 @@ changeBuildType(RelativeId("Build")) {
                     }
                     commandArgs = "--pull"
                 }
+                param("dockerImage.platform", "linux")
             }
         }
     }
