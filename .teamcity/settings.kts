@@ -135,6 +135,15 @@ object Build1 : BuildType({
         vcs {
         }
     }
+
+    features {
+        dockerSupport {
+            cleanupPushedImages = true
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_2"
+            }
+        }
+    }
 })
 
 object HttpsGithubComMoise3helloWordNodeRefsHeadsVsaas : GitVcsRoot({
