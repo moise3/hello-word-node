@@ -15,6 +15,7 @@ Utile pour tester un développement
 
 ### Build des images
 ```bash
-    docker build -t helloworld:vdocker -f build/Dockerfile .
+    docker build -t helloworld:vdocker -f build/Dockerfile.bionic .
     pack build helloworld:vpack --path src/. --builder cloudfoundry/cnb:bionic
+    s2i build src/. centos/nodejs-12-centos7 helloworld:vs2i
 ```
